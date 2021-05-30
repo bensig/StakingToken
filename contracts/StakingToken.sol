@@ -1,15 +1,18 @@
-pragma solidity ^0.5.0;
+// SPDX-License-Identifier: MIT
 
-import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
-import "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+pragma solidity ^0.6.0;
+
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.1.0/contracts/token/ERC20/ERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.1.0/contracts/math/SafeMath.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.1.0/contracts/GSN/Context.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.1.0/contracts/access/Ownable.sol";
 
 /**
  * @title Staking Token (STK)
  * @author Alberto Cuesta Canada
  * @notice Implements a basic ERC20 staking token with incentive distribution.
  */
-contract StakingToken is ERC20, Ownable {
+contract StakingToken is ERC20("Stake", "STK"), Ownable {
     using SafeMath for uint256;
 
     /**
